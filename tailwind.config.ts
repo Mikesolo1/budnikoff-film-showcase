@@ -19,6 +19,14 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Premium Brand Colors
+        'premium-black': "hsl(var(--premium-black))",
+        'premium-white': "hsl(var(--premium-white))",
+        'gold-accent': "hsl(var(--gold-accent))",
+        'gold-glow': "hsl(var(--gold-glow))",
+        'gold-dark': "hsl(var(--gold-dark))",
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -57,6 +65,30 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        'display': ['Playfair Display', 'serif'],
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'display-xl': ['5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-lg': ['4rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-md': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        'display-sm': ['2rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+      },
+      backgroundImage: {
+        'gradient-gold': 'var(--gradient-gold)',
+        'gradient-fade': 'var(--gradient-fade)',
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-radial': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
+      },
+      boxShadow: {
+        'premium': 'var(--shadow-premium)',
+        'gold': 'var(--shadow-gold)',
+        'glow-gold': 'var(--glow-gold)',
+      },
+      transitionTimingFunction: {
+        'premium': 'cubic-bezier(0.23, 1, 0.32, 1)',
       },
       borderRadius: {
         lg: "var(--radius)",
