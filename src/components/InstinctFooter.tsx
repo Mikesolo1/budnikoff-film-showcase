@@ -1,14 +1,14 @@
 const InstinctFooter = () => {
   const links = [
-    'Сценарии', 
-    'Съёмки', 
-    'Команда', 
-    'О нас', 
-    '🎬🎬🎬🎬🎬', 
-    'Кастинг', 
-    'Контакты', 
-    'Продакт-плейсмент',
-    'События'
+    { name: 'Сценарии', href: '/scripts' }, 
+    { name: 'Съёмки', href: '/production' }, 
+    { name: 'Команда', href: '/team' }, 
+    { name: 'О нас', href: '/about' }, 
+    { name: '🎬🎬🎬🎬🎬', href: '/' }, 
+    { name: 'Кастинг', href: '/casting' }, 
+    { name: 'Контакты', href: '/contacts' }, 
+    { name: 'Продакт-плейсмент', href: '/product-placement' },
+    { name: 'События', href: '/events' }
   ];
   
   return (
@@ -16,9 +16,9 @@ const InstinctFooter = () => {
       <div className="flex flex-wrap gap-1 justify-center text-sm">
         {links.map((link, index) => (
           <span key={index}>
-            <button className="text-instinct-black hover:underline font-normal">
-              {link}
-            </button>
+            <a href={link.href} className="text-instinct-black hover:underline font-normal">
+              {link.name}
+            </a>
             {index < links.length - 1 && (
               <span className="text-instinct-black mx-1">/</span>
             )}
