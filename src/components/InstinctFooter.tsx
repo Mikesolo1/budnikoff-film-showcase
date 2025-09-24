@@ -28,9 +28,6 @@ const InstinctFooter = () => {
       
       {/* Cookie Notice */}
       <div className="fixed bottom-4 right-4">
-        <button className="bg-instinct-blue text-instinct-white px-4 py-2 rounded font-medium text-sm hover:bg-opacity-90 transition-colors">
-          Принять и закрыть
-        </button>
       </div>
     </footer>
   );
