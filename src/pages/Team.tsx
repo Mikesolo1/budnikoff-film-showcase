@@ -4,7 +4,7 @@ import InstinctFooter from "@/components/InstinctFooter";
 const Team = () => {
   const team = [
     {
-      name: "Александр Будников",
+      name: "Юрий Будников",
       role: "Продюсер, режиссёр",
       experience: "15 лет в кинематографе",
       description: "Основатель студии, автор более 20 полнометражных проектов"
