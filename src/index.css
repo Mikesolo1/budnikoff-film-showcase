@@ -2,24 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Design System for Будников-Фильм
-   Inspired by A24, Saint Laurent, Gucci - Premium minimalism
+/* Instinct Design System - Minimalist brutalism
+   Inspired by instinct.ru - Clean, minimal, effective communication
    All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* Premium Color Palette */
+    /* Instinct Color Palette - Pure minimalism */
     --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    --foreground: 0 0% 0%;
     
-    /* Premium Black & White */
-    --premium-black: 0 0% 8%;
-    --premium-white: 0 0% 98%;
-    
-    /* Warm Golden Accent */
-    --gold-accent: 45 86% 62%;
-    --gold-glow: 45 86% 72%;
-    --gold-dark: 45 100% 45%;
+    /* Core Colors */
+    --instinct-white: 0 0% 100%;
+    --instinct-black: 0 0% 0%;
+    --instinct-blue: 210 100% 50%;
     
     /* UI Colors */
     --card: 0 0% 98%;
@@ -27,60 +23,31 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 8%;
     
-    --primary: 45 86% 62%;
-    --primary-foreground: 0 0% 8%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 8%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
     
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
     
-    --accent: 45 86% 62%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 45 86% 62%;
+    --ring: 210 100% 50%;
     
-    --radius: 0.75rem;
-    
-    /* Premium Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-accent)), hsl(var(--gold-glow)));
-    --gradient-fade: linear-gradient(180deg, transparent, hsl(var(--premium-black) / 0.8));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--premium-black)), hsl(0 0% 15%));
-    
-    /* Premium Shadows & Glows */
-    --shadow-premium: 0 20px 40px -12px hsl(var(--premium-black) / 0.25);
-    --shadow-gold: 0 10px 30px -10px hsl(var(--gold-accent) / 0.3);
-    --glow-gold: 0 0 40px hsl(var(--gold-glow) / 0.4);
-    
-    /* Smooth Transitions */
-    --transition-premium: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 50px;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 45 86% 62%;
-    --primary-foreground: 0 0% 8%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 45 86% 62%;
-    --accent-foreground: 0 0% 8%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 45 86% 62%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
   }
 }
 
@@ -98,114 +65,20 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
-  /* Premium Typography */
-  .font-display {
-    font-family: 'Playfair Display', serif;
-  }
-  
+  /* Instinct Typography */
   .font-sans {
     font-family: 'Inter', system-ui, sans-serif;
   }
 }
 
 @layer components {
-  /* Premium Animation Classes */
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  }
-  
-  .animate-fade-in-scale {
-    animation: fade-in-scale 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  }
-  
-  .animate-slide-in-left {
-    animation: slide-in-left 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  }
-  
-  .animate-glow-pulse {
-    animation: glow-pulse 3s ease-in-out infinite;
-  }
-  
-  /* Premium Hover Effects */
-  .hover-lift {
-    transition: var(--transition-premium);
-    transform: translateY(0);
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-premium);
-  }
-  
-  .hover-gold-glow:hover {
-    box-shadow: var(--glow-gold);
-    transform: scale(1.02);
-  }
-  
-  /* Premium Text Effects */
-  .text-gradient-gold {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .text-stroke {
-    -webkit-text-stroke: 1px hsl(var(--gold-accent));
-    text-stroke: 1px hsl(var(--gold-accent));
+  /* Instinct UI Components */
+  .instinct-face {
+    font-family: monospace;
+    font-size: 4rem;
+    line-height: 1;
+    color: hsl(var(--instinct-black));
+    user-select: none;
   }
 }
 
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in-scale {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slide-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--gold-accent) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(var(--gold-glow) / 0.6), 0 0 60px hsl(var(--gold-glow) / 0.3);
-  }
-}
-
-/* Scroll Animations */
-@keyframes reveal {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

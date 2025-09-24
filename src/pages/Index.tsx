@@ -1,19 +1,13 @@
-import Hero from "@/components/sections/Hero";
-import Scripts from "@/components/sections/Scripts";
-import Production from "@/components/sections/Production";
-import ProductPlacement from "@/components/sections/ProductPlacement";
-import Events from "@/components/sections/Events";
-import Contacts from "@/components/sections/Contacts";
+import InstinctHeader from "@/components/InstinctHeader";
+import InstinctMain from "@/components/InstinctMain";
+import InstinctFooter from "@/components/InstinctFooter";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <Scripts />
-      <Production />
-      <ProductPlacement />
-      <Events />
-      <Contacts />
+    <div className="min-h-screen bg-instinct-white">
+      <InstinctHeader />
+      <InstinctMain />
+      <InstinctFooter />
     </div>
   );
 };
