@@ -2,9 +2,9 @@ const InstinctHeader = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-instinct-white">
       <div className="flex items-center justify-between px-6 py-4">
-        <div className="font-sans text-instinct-black font-normal text-base">
+        <a href="/" className="font-sans text-instinct-black font-normal text-base hover:opacity-70 transition-opacity">
           будников-фильм™
-        </div>
+        </a>
         
         <div className="flex gap-2">
           <button className="w-10 h-10 rounded-full border border-instinct-black bg-instinct-black text-instinct-white text-sm font-medium flex items-center justify-center hover:bg-instinct-white hover:text-instinct-black transition-colors">

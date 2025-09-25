@@ -33,13 +33,13 @@ const Team = () => {
     <div className="min-h-screen bg-instinct-white">
       <InstinctHeader />
       
-      <main className="pt-20 pb-16 px-6">
+      <main className="pt-20 pb-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-3xl font-normal text-instinct-black mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h1 className="text-2xl sm:text-3xl font-normal text-instinct-black mb-4 sm:mb-6">
               Команда
             </h1>
-            <p className="text-lg text-instinct-black/70 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-instinct-black/70 max-w-2xl mx-auto">
               Профессионалы с многолетним опытом в кинематографе, рекламе и телевидении
             </p>
           </div>
