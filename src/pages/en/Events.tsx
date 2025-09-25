@@ -1,7 +1,7 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
 
-const Events = () => {
+const EventsEn = () => {
   return (
     <div className="min-h-screen bg-instinct-white">
       <InstinctHeader />
@@ -10,10 +10,10 @@ const Events = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-2xl sm:text-3xl font-normal text-instinct-black mb-4 sm:mb-6">
-              Крупнейшие мероприятия СНГ
+              Major CIS Events
             </h1>
             <p className="text-base sm:text-lg text-instinct-black/70 max-w-2xl mx-auto">
-              Создаём и сопровождаем культурные события, объединяющие бренды и аудиторию
+              We create and accompany cultural events that unite brands and audiences
             </p>
           </div>
           
@@ -21,29 +21,29 @@ const Events = () => {
             <div className="aspect-video bg-instinct-black/5 rounded-lg flex items-center justify-center border border-instinct-black/10">
               <div className="text-center">
                 <div className="text-4xl mb-2">🎪</div>
-                <span className="text-instinct-black/60">Премьеры</span>
+                <span className="text-instinct-black/60">Premieres</span>
               </div>
             </div>
             <div className="aspect-video bg-instinct-black/5 rounded-lg flex items-center justify-center border border-instinct-black/10">
               <div className="text-center">
                 <div className="text-4xl mb-2">🎭</div>
-                <span className="text-instinct-black/60">События</span>
+                <span className="text-instinct-black/60">Events</span>
               </div>
             </div>
           </div>
           
           <div className="space-y-16">
             <section>
-              <h2 className="text-2xl font-normal text-instinct-black mb-12 text-center">Типы мероприятий</h2>
+              <h2 className="text-2xl font-normal text-instinct-black mb-12 text-center">Event Types</h2>
               
               <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-instinct-white text-lg">🎬</span>
                   </div>
-                  <h3 className="font-medium text-instinct-black mb-3 sm:mb-4">Кинопремьеры</h3>
+                  <h3 className="font-medium text-instinct-black mb-3 sm:mb-4">Film Premieres</h3>
                   <p className="text-sm sm:text-base text-instinct-black/60 leading-relaxed">
-                    Организация премьер фильмов и сериалов с участием звёзд, прессы и партнёров
+                    Organization of film and series premieres with participation of stars, press and partners
                   </p>
                 </div>
                 
@@ -51,9 +51,9 @@ const Events = () => {
                   <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-instinct-white text-lg">🏆</span>
                   </div>
-                  <h3 className="font-medium text-instinct-black mb-3 sm:mb-4">Награждения</h3>
+                  <h3 className="font-medium text-instinct-black mb-3 sm:mb-4">Award Ceremonies</h3>
                   <p className="text-sm sm:text-base text-instinct-black/60 leading-relaxed">
-                    Церемонии вручения премий в области кино, телевидения и рекламы
+                    Award ceremonies in cinema, television and advertising
                   </p>
                 </div>
                 
@@ -61,58 +61,58 @@ const Events = () => {
                   <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-instinct-white text-lg">🎪</span>
                   </div>
-                  <h3 className="font-medium text-instinct-black mb-3 sm:mb-4">Фестивали</h3>
+                  <h3 className="font-medium text-instinct-black mb-3 sm:mb-4">Festivals</h3>
                   <p className="text-sm sm:text-base text-instinct-black/60 leading-relaxed">
-                    Кинофестивали и культурные мероприятия международного уровня
+                    Film festivals and international level cultural events
                   </p>
                 </div>
               </div>
             </section>
             
             <section className="border-t border-instinct-black/10 pt-16">
-              <h2 className="text-2xl font-normal text-instinct-black mb-12 text-center">Услуги для мероприятий</h2>
+              <h2 className="text-2xl font-normal text-instinct-black mb-12 text-center">Event Services</h2>
               
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
-                  <h3 className="text-lg font-medium text-instinct-black mb-6">Планирование</h3>
+                  <h3 className="text-lg font-medium text-instinct-black mb-6">Planning</h3>
                   <ul className="space-y-3 text-instinct-black/70">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-instinct-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Концепция и сценарий мероприятия</span>
+                      <span>Event concept and script</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-instinct-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Подбор и бронирование площадок</span>
+                      <span>Venue selection and booking</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-instinct-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Координация с участниками</span>
+                      <span>Participant coordination</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-instinct-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Техническое оснащение</span>
+                      <span>Technical equipment</span>
                     </li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-medium text-instinct-black mb-6">Реализация</h3>
+                  <h3 className="text-lg font-medium text-instinct-black mb-6">Execution</h3>
                   <ul className="space-y-3 text-instinct-black/70">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-instinct-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Съёмка и трансляция</span>
+                      <span>Filming and broadcasting</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-instinct-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>PR и работа с медиа</span>
+                      <span>PR and media relations</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-instinct-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Управление процессом</span>
+                      <span>Process management</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-instinct-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Пост-продакшн материалов</span>
+                      <span>Material post-production</span>
                     </li>
                   </ul>
                 </div>
@@ -120,26 +120,26 @@ const Events = () => {
             </section>
             
             <section className="border-t border-instinct-black/10 pt-16">
-              <h2 className="text-2xl font-normal text-instinct-black mb-12 text-center">Партнёрство</h2>
+              <h2 className="text-2xl font-normal text-instinct-black mb-12 text-center">Partnership</h2>
               
               <div className="max-w-2xl mx-auto text-center">
                 <p className="text-instinct-black/70 text-lg leading-relaxed mb-8">
-                  Мы создаём уникальные возможности для брендов стать частью культурных событий, 
-                  которые формируют общественное мнение и задают тренды.
+                  We create unique opportunities for brands to become part of cultural events 
+                  that shape public opinion and set trends.
                 </p>
                 
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-mono text-instinct-black/30 mb-2">50+</div>
-                    <p className="text-sm text-instinct-black/60">Мероприятий в год</p>
+                    <p className="text-sm text-instinct-black/60">Events per year</p>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-mono text-instinct-black/30 mb-2">100K</div>
-                    <p className="text-sm text-instinct-black/60">Участников</p>
+                    <p className="text-sm text-instinct-black/60">Participants</p>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-mono text-instinct-black/30 mb-2">5M</div>
-                    <p className="text-sm text-instinct-black/60">Медиа-охват</p>
+                    <p className="text-sm text-instinct-black/60">Media reach</p>
                   </div>
                 </div>
               </div>
@@ -153,4 +153,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default EventsEn;

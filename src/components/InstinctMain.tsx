@@ -8,31 +8,53 @@ const InstinctMain = () => {
     <main className="bg-instinct-white">
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20">
-        {/* Animated Face */}
+        {/* Animated Logo */}
         <div className="mb-12">
-          <div className="instinct-face text-center animate-pulse">
-            ( ‾ʖ̫‾)
+          <div className="text-center animate-fade-in">
+            <h1 className="text-2xl sm:text-3xl font-normal text-instinct-black animate-pulse tracking-wide">
+              будников-фильм™
+            </h1>
           </div>
         </div>
         
         {/* Animated Activity List */}
         <div className="mb-16 text-center">
           <div className="animate-fade-in space-y-4">
-            <div className="text-instinct-black text-lg font-normal opacity-80 animate-slide-up" style={{ animationDelay: '0.5s' }}>
+            <a 
+              href="/scripts"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '0.5s' }}
+            >
               Сценарии
-            </div>
-            <div className="text-instinct-black text-lg font-normal opacity-80 animate-slide-up" style={{ animationDelay: '1s' }}>
+            </a>
+            <a 
+              href="/production"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '1s' }}
+            >
               Съёмки
-            </div>
-            <div className="text-instinct-black text-lg font-normal opacity-80 animate-slide-up" style={{ animationDelay: '1.5s' }}>
+            </a>
+            <a 
+              href="/casting"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '1.5s' }}
+            >
               Кастинг
-            </div>
-            <div className="text-instinct-black text-lg font-normal opacity-80 animate-slide-up" style={{ animationDelay: '2s' }}>
+            </a>
+            <a 
+              href="/product-placement"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '2s' }}
+            >
               Продакт-плейсмент
-            </div>
-            <div className="text-instinct-black text-lg font-normal opacity-80 animate-slide-up" style={{ animationDelay: '2.5s' }}>
+            </a>
+            <a 
+              href="/events"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '2.5s' }}
+            >
               События
-            </div>
+            </a>
           </div>
         </div>
         
