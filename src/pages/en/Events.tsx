@@ -1,7 +1,15 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import { useEffect } from "react";
 
 const EventsEn = () => {
+  useEffect(() => {
+    document.title = "Events — Budnikov-Film";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Premium events organization: film premieres, corporate events, brand presentations. Professional event management services.');
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-instinct-white">
       <InstinctHeader />

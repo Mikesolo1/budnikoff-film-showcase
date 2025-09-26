@@ -1,7 +1,15 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import { useEffect } from "react";
 
 const ProductionEn = () => {
+  useEffect(() => {
+    document.title = "Production — Budnikov-Film";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Full cycle film and series production: from pre-production to post-production. Professional filming crew and equipment.');
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-instinct-white">
       <InstinctHeader />

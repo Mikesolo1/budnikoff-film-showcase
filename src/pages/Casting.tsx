@@ -1,7 +1,15 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import { useEffect } from "react";
 
 const Casting = () => {
+  useEffect(() => {
+    document.title = "Кастинг — Будников-Фильм";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Профессиональный кастинг актеров для фильмов, сериалов и рекламы. Поиск новых лиц и работа с известными артистами.');
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-instinct-white">
       <InstinctHeader />

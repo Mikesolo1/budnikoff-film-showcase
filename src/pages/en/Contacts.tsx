@@ -1,7 +1,15 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import { useEffect } from "react";
 
 const ContactsEn = () => {
+  useEffect(() => {
+    document.title = "Contacts — Budnikov-Film";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Contact Budnikov-Film creative agency. Moscow office. Get in touch to discuss projects and collaboration opportunities.');
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-instinct-white">
       <InstinctHeader />

@@ -1,4 +1,14 @@
+import { useEffect } from "react";
+
 const InstinctMain = () => {
+  useEffect(() => {
+    document.title = "Будников-Фильм — Креативное агентство для премиальных брендов";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Полнометражные фильмы, сериалы, реклама. От идеи до премьеры. Продакт-плейсмент в топовые проекты.');
+    }
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -55,11 +65,18 @@ const InstinctMain = () => {
             >
               События
             </a>
+            <a 
+              href="/cases"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '3s' }}
+            >
+              Кейсы
+            </a>
           </div>
         </div>
         
         {/* Call to Action */}
-        <div className="mb-16 animate-fade-in" style={{ animationDelay: '3s' }}>
+        <div className="mb-16 animate-fade-in" style={{ animationDelay: '3.5s' }}>
           <a 
             href="/contacts"
             className="text-instinct-black text-base font-normal underline hover:no-underline transition-all"
@@ -69,7 +86,7 @@ const InstinctMain = () => {
         </div>
         
         {/* Main Message */}
-        <div className="max-w-2xl text-center animate-fade-in" style={{ animationDelay: '3.5s' }}>
+        <div className="max-w-2xl text-center animate-fade-in" style={{ animationDelay: '4s' }}>
           <p className="text-instinct-black text-base sm:text-lg leading-relaxed font-normal">
             Мы снимаем вертикальные многосерийные проекты для стриминговых платформ и ищем новые яркие лица. 
             Креативность — это эффективный инструмент коммуникации нового поколения.

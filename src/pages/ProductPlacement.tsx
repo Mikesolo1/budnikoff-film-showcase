@@ -1,7 +1,15 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import { useEffect } from "react";
 
 const ProductPlacement = () => {
+  useEffect(() => {
+    document.title = "Продакт-плейсмент — Будников-Фильм";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Интеграция брендов в кино и сериалы. Продакт-плейсмент в топовые проекты для максимальной эффективности рекламы.');
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-instinct-white">
       <InstinctHeader />

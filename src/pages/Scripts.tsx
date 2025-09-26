@@ -1,7 +1,16 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import { useEffect } from "react";
 
 const Scripts = () => {
+  useEffect(() => {
+    document.title = "Сценарии — Будников-Фильм";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Профессиональное написание сценариев для полнометражных фильмов, премиальных сериалов и креативной рекламы. От идеи до готового сценария.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-instinct-white">
       <InstinctHeader />

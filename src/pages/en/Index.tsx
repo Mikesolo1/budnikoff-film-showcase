@@ -1,7 +1,16 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import { useEffect } from "react";
 
 const IndexEn = () => {
+  useEffect(() => {
+    document.title = "Budnikov-Film — Creative Agency for Premium Brands";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Feature films, series, advertising. From idea to premiere. Product placement in top projects. Creative agency for modern media.');
+    }
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -53,18 +62,25 @@ const IndexEn = () => {
               >
                 Product Placement
               </a>
-              <a 
-                href="/en/events"
-                className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
-                style={{ animationDelay: '2.5s' }}
-              >
-                Events
-              </a>
+            <a 
+              href="/en/events"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '2.5s' }}
+            >
+              Events
+            </a>
+            <a 
+              href="/en/cases"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '3s' }}
+            >
+              Cases
+            </a>
             </div>
           </div>
           
           {/* Call to Action */}
-          <div className="mb-16 animate-fade-in" style={{ animationDelay: '3s' }}>
+          <div className="mb-16 animate-fade-in" style={{ animationDelay: '3.5s' }}>
             <a 
               href="/en/contacts"
               className="text-instinct-black text-base font-normal underline hover:no-underline transition-all"
@@ -74,7 +90,7 @@ const IndexEn = () => {
           </div>
           
           {/* Main Message */}
-          <div className="max-w-2xl text-center animate-fade-in" style={{ animationDelay: '3.5s' }}>
+          <div className="max-w-2xl text-center animate-fade-in" style={{ animationDelay: '4s' }}>
             <p className="text-instinct-black text-base sm:text-lg leading-relaxed font-normal">
               We produce vertical multi-episode projects for streaming platforms and search for new bright faces. 
               Creativity is an effective communication tool for the new generation.

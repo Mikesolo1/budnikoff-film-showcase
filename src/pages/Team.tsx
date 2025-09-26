@@ -1,7 +1,15 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import { useEffect } from "react";
 
 const Team = () => {
+  useEffect(() => {
+    document.title = "Команда — Будников-Фильм";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Творческая команда Будников-Фильм: режиссеры, продюсеры, сценаристы. Профессионалы с опытом работы над крупными проектами.');
+    }
+  }, []);
   const team = [
     {
       name: "Юрий Будников",
