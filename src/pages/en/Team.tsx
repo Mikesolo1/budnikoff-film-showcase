@@ -25,66 +25,208 @@ const TeamEn = () => {
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-16 sm:mb-20">
-            <div className="text-center">
-              <div className="w-24 h-24 bg-instinct-black/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">👨‍💼</span>
+          <div className="space-y-16">
+            <section>
+              <div className="grid md:grid-cols-2 gap-12">
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      ЮБ
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Yuri Budnikov</h3>
+                      <p className="text-sm text-instinct-black/60">Producer, Director</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">15 years in cinema</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Studio founder, author of over 20 feature-length projects
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      МС
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Mikhail Solomatin</h3>
+                      <p className="text-sm text-instinct-black/60">Marketing Director</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">16 years in e-commerce</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Expert in international projects and co-production
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      ВК
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Vsevolod Kotovich</h3>
+                      <p className="text-sm text-instinct-black/60">Producer</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">12 years in industry</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Expert in managing large-scale projects
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      ПК
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Pavel Kosov</h3>
+                      <p className="text-sm text-instinct-black/60">Creative Producer</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">10 years in creative</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Responsible for the creative component of projects
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      СГ
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Sergey Gribkov</h3>
+                      <p className="text-sm text-instinct-black/60">Production Producer</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">14 years in production</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Coordinates all stages of production
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      ЕБ
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Egor Budnikov</h3>
+                      <p className="text-sm text-instinct-black/60">CTO</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">8 years in technology</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Leads the technical side of projects
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      ВБ
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Valentin Bulgakov</h3>
+                      <p className="text-sm text-instinct-black/60">Art Director</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">11 years in design</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Creates the visual concept of projects
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      СШ
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Stasya Shulyak</h3>
+                      <p className="text-sm text-instinct-black/60">Project Manager</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">7 years in management</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Coordinates team work and schedules
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      ЮШ
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Yulia Shkredova</h3>
+                      <p className="text-sm text-instinct-black/60">Client Relations Manager</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">9 years in client service</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Ensures communication with clients
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      АГ
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Anastasia Gileva</h3>
+                      <p className="text-sm text-instinct-black/60">Account Manager</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">6 years in sales</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Manages client projects from start to finish
+                  </p>
+                </div>
+
+                <div className="border border-instinct-black/10 rounded-lg p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-instinct-black rounded-full flex items-center justify-center text-instinct-white font-mono mr-4">
+                      АБ
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-instinct-black">Alexander Boraborkin</h3>
+                      <p className="text-sm text-instinct-black/60">Technical Specialist</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xs text-instinct-black/50 font-mono">5 years in IT</span>
+                  </div>
+                  <p className="text-instinct-black/70 text-sm leading-relaxed">
+                    Provides technical support for filming
+                  </p>
+                </div>
               </div>
-              <h2 className="text-lg sm:text-xl font-normal text-instinct-black mb-2">Producer</h2>
-              <p className="text-sm sm:text-base text-instinct-black/60 leading-relaxed">
-                Project management from idea to screen
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-24 h-24 bg-instinct-black/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">🎬</span>
-              </div>
-              <h2 className="text-xl font-normal text-instinct-black mb-2">Director</h2>
-              <p className="text-instinct-black/60 leading-relaxed">
-                Artistic vision and creative control
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-24 h-24 bg-instinct-black/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">✍️</span>
-              </div>
-              <h2 className="text-xl font-normal text-instinct-black mb-2">Screenwriter</h2>
-              <p className="text-instinct-black/60 leading-relaxed">
-                Stories that captivate audiences
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-24 h-24 bg-instinct-black/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">📷</span>
-              </div>
-              <h2 className="text-xl font-normal text-instinct-black mb-2">Cinematographer</h2>
-              <p className="text-instinct-black/60 leading-relaxed">
-                Visual language and atmosphere
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-24 h-24 bg-instinct-black/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">🎭</span>
-              </div>
-              <h2 className="text-xl font-normal text-instinct-black mb-2">Casting Director</h2>
-              <p className="text-instinct-black/60 leading-relaxed">
-                Finding perfect actors for roles
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-24 h-24 bg-instinct-black/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">✂️</span>
-              </div>
-              <h2 className="text-xl font-normal text-instinct-black mb-2">Editor</h2>
-              <p className="text-instinct-black/60 leading-relaxed">
-                Rhythm and flow of narrative
-              </p>
-            </div>
+            </section>
           </div>
           
           <div className="border-t border-instinct-black/10 pt-16">
