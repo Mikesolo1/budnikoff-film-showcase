@@ -151,13 +151,10 @@ const Casting = () => {
                 </p>
                 
                 <div className="flex justify-center space-x-6">
-                  <a href="#" className="text-instinct-black hover:text-instinct-blue transition-colors">
-                    Instagram
-                  </a>
-                  <a href="#" className="text-instinct-black hover:text-instinct-blue transition-colors">
+                  <a href="https://t.me/budnikof_film" className="text-instinct-black hover:text-instinct-blue transition-colors" target="_blank" rel="noopener noreferrer">
                     Telegram
                   </a>
-                  <a href="#" className="text-instinct-black hover:text-instinct-blue transition-colors">
+                  <a href="https://vk.com/budnikoff_film" className="text-instinct-black hover:text-instinct-blue transition-colors" target="_blank" rel="noopener noreferrer">
                     VKontakte
                   </a>
                 </div>

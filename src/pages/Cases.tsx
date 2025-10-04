@@ -27,27 +27,32 @@ const Cases = () => {
     {
       title: "Саратов. Точка Отрыва",
       type: "Документальный фильм",
-      description: "История о преодолении границ в провинциальном городе"
+      description: "История о преодолении границ в провинциальном городе",
+      videoUrl: ""
     },
     {
       title: "Кандидатки Рулят",
       type: "Сериал",
-      description: "Комедийная драма о женщинах в политике"
+      description: "Комедийная драма о женщинах в политике",
+      videoUrl: ""
     },
     {
       title: "Тур с Иванушками",
       type: "Фильм",
-      description: "Музыкальная комедия о популярной группе"
+      description: "Музыкальная комедия о популярной группе",
+      videoUrl: ""
     },
     {
       title: "Почему вы управленец?",
       type: "Документальный фильм",
-      description: "Исследование современного менеджмента"
+      description: "Исследование современного менеджмента",
+      videoUrl: ""
     },
     {
       title: "Робинзон?",
       type: "Документальный фильм",
-      description: "Философские размышления о современном мире"
+      description: "Философские размышления о современном мире",
+      videoUrl: ""
     }
   ];
 
@@ -93,20 +98,30 @@ const Cases = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-instinct-white border-2 border-instinct-black p-8 transition-all duration-300 hover:bg-instinct-black hover:text-instinct-white animate-fade-in"
+                className="group bg-instinct-white border-2 border-instinct-black p-8 transition-all duration-300 hover:border-instinct-black/60 animate-fade-in"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 text-xs font-normal border border-current opacity-60 group-hover:opacity-100 transition-opacity">
+                  <span className="inline-block px-3 py-1 text-xs font-normal border border-instinct-black opacity-60 transition-opacity">
                     {project.type}
                   </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-normal mb-4 leading-tight">
+                <h3 className="text-xl sm:text-2xl font-normal mb-4 leading-tight text-instinct-black">
                   {project.title}
                 </h3>
-                <p className="text-base font-normal opacity-80 group-hover:opacity-100 transition-opacity leading-relaxed">
+                <p className="text-base font-normal opacity-80 transition-opacity leading-relaxed text-instinct-black mb-6">
                   {project.description}
                 </p>
+                {project.videoUrl && (
+                  <video 
+                    controls 
+                    className="w-full rounded border border-instinct-black/20"
+                    preload="metadata"
+                  >
+                    <source src={project.videoUrl} type="video/mp4" />
+                    Ваш браузер не поддерживает видео.
+                  </video>
+                )}
               </div>
             ))}
           </div>

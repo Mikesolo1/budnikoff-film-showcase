@@ -25,7 +25,7 @@ const ProductPlacementEn = () => {
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-16 sm:mb-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-16 sm:mb-20 mt-12 sm:mt-16">
             <div className="text-center">
               <div className="text-5xl sm:text-8xl font-mono text-instinct-black/20 mb-4 sm:mb-6">01</div>
               <h2 className="text-lg sm:text-xl font-normal text-instinct-black mb-3 sm:mb-4">Natural Integration</h2>

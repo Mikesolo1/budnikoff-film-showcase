@@ -31,7 +31,7 @@ const ContactsEn = () => {
                 <h2 className="text-lg font-medium text-instinct-black mb-4">General Inquiries</h2>
                 <div className="space-y-2 text-instinct-black/70">
                   <p>info@budnikov-film.com</p>
-                  <p>+7 (495) 123-45-67</p>
+                  <p>+7 (910) 432-78-78</p>
                 </div>
               </div>
               
@@ -39,7 +39,7 @@ const ContactsEn = () => {
                 <h2 className="text-lg font-medium text-instinct-black mb-4">Production</h2>
                 <div className="space-y-2 text-instinct-black/70">
                   <p>production@budnikov-film.com</p>
-                  <p>+7 (495) 234-56-78</p>
+                  <p>+7 (910) 432-78-78</p>
                 </div>
               </div>
               
@@ -47,7 +47,7 @@ const ContactsEn = () => {
                 <h2 className="text-lg font-medium text-instinct-black mb-4">Casting</h2>
                 <div className="space-y-2 text-instinct-black/70">
                   <p>casting@budnikov-film.com</p>
-                  <p>+7 (495) 345-67-89</p>
+                  <p>+7 (910) 432-78-78</p>
                 </div>
               </div>
             </div>
@@ -74,14 +74,11 @@ const ContactsEn = () => {
               <div>
                 <h2 className="text-lg font-medium text-instinct-black mb-4">Social Media</h2>
                 <div className="space-y-2">
-                  <a href="#" className="block text-instinct-black/70 hover:text-instinct-black transition-colors">
-                    Telegram: @budnikov_film
+                  <a href="https://t.me/budnikof_film" className="block text-instinct-black/70 hover:text-instinct-black transition-colors" target="_blank" rel="noopener noreferrer">
+                    Telegram: @budnikof_film
                   </a>
-                  <a href="#" className="block text-instinct-black/70 hover:text-instinct-black transition-colors">
-                    Instagram: @budnikov.film
-                  </a>
-                  <a href="#" className="block text-instinct-black/70 hover:text-instinct-black transition-colors">
-                    YouTube: Budnikov Film
+                  <a href="https://vk.com/budnikoff_film" className="block text-instinct-black/70 hover:text-instinct-black transition-colors" target="_blank" rel="noopener noreferrer">
+                    VKontakte: budnikoff_film
                   </a>
                 </div>
               </div>

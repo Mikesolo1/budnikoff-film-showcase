@@ -27,27 +27,32 @@ const CasesEn = () => {
     {
       title: "Saratov. Breaking Point",
       type: "Documentary",
-      description: "A story about breaking boundaries in a provincial city"
+      description: "A story about breaking boundaries in a provincial city",
+      videoUrl: ""
     },
     {
       title: "Candidates Rule",
       type: "Series",
-      description: "A comedy-drama about women in politics"
+      description: "A comedy-drama about women in politics",
+      videoUrl: ""
     },
     {
       title: "Tour with Ivanushki",
       type: "Film",
-      description: "A musical comedy about the popular band"
+      description: "A musical comedy about the popular band",
+      videoUrl: ""
     },
     {
       title: "Why Are You a Manager?",
       type: "Documentary",
-      description: "An exploration of modern management"
+      description: "An exploration of modern management",
+      videoUrl: ""
     },
     {
       title: "Robinson?",
       type: "Documentary",
-      description: "Philosophical reflections on the modern world"
+      description: "Philosophical reflections on the modern world",
+      videoUrl: ""
     }
   ];
 
@@ -93,20 +98,30 @@ const CasesEn = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-instinct-white border-2 border-instinct-black p-8 transition-all duration-300 hover:bg-instinct-black hover:text-instinct-white animate-fade-in"
+                className="group bg-instinct-white border-2 border-instinct-black p-8 transition-all duration-300 hover:border-instinct-black/60 animate-fade-in"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 text-xs font-normal border border-current opacity-60 group-hover:opacity-100 transition-opacity">
+                  <span className="inline-block px-3 py-1 text-xs font-normal border border-instinct-black opacity-60 transition-opacity">
                     {project.type}
                   </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-normal mb-4 leading-tight">
+                <h3 className="text-xl sm:text-2xl font-normal mb-4 leading-tight text-instinct-black">
                   {project.title}
                 </h3>
-                <p className="text-base font-normal opacity-80 group-hover:opacity-100 transition-opacity leading-relaxed">
+                <p className="text-base font-normal opacity-80 transition-opacity leading-relaxed text-instinct-black mb-6">
                   {project.description}
                 </p>
+                {project.videoUrl && (
+                  <video 
+                    controls 
+                    className="w-full rounded border border-instinct-black/20"
+                    preload="metadata"
+                  >
+                    <source src={project.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
               </div>
             ))}
           </div>

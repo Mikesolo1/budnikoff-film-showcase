@@ -1,4 +1,4 @@
-import { Mail, Globe, Instagram, Youtube, Send, Phone, MapPin } from "lucide-react";
+import { Mail, Globe, Youtube, Send, Phone, MapPin } from "lucide-react";
 
 const Contacts = () => {
   const contactMethods = [
@@ -12,8 +12,8 @@ const Contacts = () => {
     {
       icon: Phone, 
       label: "Телефон",
-      value: "+7 (495) 123-45-67",
-      href: "tel:+74951234567",
+      value: "+7 (910) 432-78-78",
+      href: "tel:+79104327878",
       description: "Прямая связь с продюсером"
     },
     {
@@ -33,9 +33,8 @@ const Contacts = () => {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: "https://instagram.com/budnikoff_film", label: "Instagram", followers: "125K" },
-    { icon: Youtube, href: "https://youtube.com/budnikofffilm", label: "YouTube", followers: "89K" },
-    { icon: Send, href: "https://t.me/budnikoff_film", label: "Telegram", followers: "45K" },
+    { icon: Send, href: "https://t.me/budnikof_film", label: "Telegram", followers: "45K" },
+    { icon: Youtube, href: "https://vk.com/budnikoff_film", label: "VKontakte", followers: "89K" },
   ];
 
   return (

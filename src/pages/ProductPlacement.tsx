@@ -25,13 +25,6 @@ const ProductPlacement = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-20">
-            {Array.from({ length: 18 }, (_, i) => (
-              <div key={i} className="aspect-square bg-instinct-black/5 rounded-lg flex items-center justify-center border border-instinct-black/10 hover:bg-instinct-black/10 transition-colors">
-                <span className="text-xs text-instinct-black/40 font-mono">BRAND</span>
-              </div>
-            ))}
-          </div>
           
           <div className="space-y-16">
             <section>

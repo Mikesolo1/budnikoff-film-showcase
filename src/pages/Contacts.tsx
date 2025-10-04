@@ -40,8 +40,8 @@ const Contacts = () => {
                   </a>
                 </p>
                 <p className="text-instinct-black">
-                  <a href="tel:+79123456789" className="hover:underline transition-all">
-                    +7 (912) 345-67-89
+                  <a href="tel:+79104327878" className="hover:underline transition-all">
+                    +7 (910) 432-78-78
                   </a>
                 </p>
               </div>
@@ -50,13 +50,10 @@ const Contacts = () => {
             <div className="border-t border-instinct-black/10 pt-12">
               <h2 className="text-xl font-medium text-instinct-black mb-6 text-center">Социальные сети</h2>
               <div className="flex justify-center space-x-8">
-                <a href="#" className="text-instinct-black hover:text-instinct-blue transition-colors">
-                  Instagram
-                </a>
-                <a href="#" className="text-instinct-black hover:text-instinct-blue transition-colors">
+                <a href="https://t.me/budnikof_film" className="text-instinct-black hover:text-instinct-blue transition-colors" target="_blank" rel="noopener noreferrer">
                   Telegram
                 </a>
-                <a href="#" className="text-instinct-black hover:text-instinct-blue transition-colors">
+                <a href="https://vk.com/budnikoff_film" className="text-instinct-black hover:text-instinct-blue transition-colors" target="_blank" rel="noopener noreferrer">
                   VKontakte
                 </a>
               </div>
