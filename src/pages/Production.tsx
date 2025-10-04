@@ -29,13 +29,13 @@ const Production = () => {
             <div className="aspect-video bg-instinct-black/5 rounded-lg flex items-center justify-center border border-instinct-black/10">
               <div className="text-center">
                 <div className="text-4xl mb-2">🎬</div>
-                <span className="text-instinct-black/60">Производство</span>
+                <span className="text-instinct-black/60">От идеи</span>
               </div>
             </div>
             <div className="aspect-video bg-instinct-black/5 rounded-lg flex items-center justify-center border border-instinct-black/10">
               <div className="text-center">
                 <div className="text-4xl mb-2">🎥</div>
-                <span className="text-instinct-black/60">Кинематограф</span>
+                <span className="text-instinct-black/60">До полной реализации</span>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ const Production = () => {
                     <span className="text-instinct-white text-xl">🎭</span>
                   </div>
                   <h3 className="font-medium text-instinct-black mb-2">Художественные фильмы</h3>
-                  <p className="text-sm text-instinct-black/60">Полнометражное авторское кино для широкого проката</p>
+                  <p className="text-sm text-instinct-black/60">Полнометражное кино для широкого проката</p>
                 </div>
                 
                 <div className="text-center">
