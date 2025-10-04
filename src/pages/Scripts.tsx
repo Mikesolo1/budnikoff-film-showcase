@@ -31,14 +31,14 @@ const Scripts = () => {
               <div className="text-5xl sm:text-8xl font-mono text-instinct-black/20 mb-4 sm:mb-6">01</div>
               <h2 className="text-lg sm:text-xl font-normal text-instinct-black mb-3 sm:mb-4">Полнометражные фильмы</h2>
               <p className="text-sm sm:text-base text-instinct-black/60 leading-relaxed">
-                Авторское кино для международного проката. Работаем с режиссёрами и продюсерами над созданием 
+                Кино для международного проката. Работаем с режиссёрами и продюсерами над созданием 
                 уникальных историй, которые найдут отклик у зрителей по всему миру.
               </p>
             </div>
             
             <div className="text-center">
               <div className="text-8xl font-mono text-instinct-black/20 mb-6">02</div>
-              <h2 className="text-xl font-normal text-instinct-black mb-4">Премиальные сериалы</h2>
+              <h2 className="text-xl font-normal text-instinct-black mb-4">Многосерийные проекты</h2>
               <p className="text-instinct-black/60 leading-relaxed">
                 Многосерийные проекты для стриминговых платформ. Создаём драматургию, которая держит зрителя 
                 от первой до последней серии, развивая персонажей и сюжетные линии.
