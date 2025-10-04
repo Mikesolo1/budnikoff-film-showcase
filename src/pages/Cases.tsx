@@ -40,7 +40,7 @@ const Cases = () => {
       title: "Тур с Иванушками",
       type: "Фильм",
       description: "Музыкальная комедия о популярной группе",
-      videoUrl: ""
+      videoUrl: "/tur2024.mp4"
     },
     {
       title: "Почему вы управленец?",
