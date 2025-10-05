@@ -14,6 +14,7 @@ import Casting from "./pages/Casting";
 import Team from "./pages/Team";
 import About from "./pages/About";
 import Cases from "./pages/Cases";
+import Kremlin from "./pages/Kremlin";
 import NotFound from "./pages/NotFound";
 // English pages
 import IndexEn from "./pages/en/Index";
@@ -26,6 +27,7 @@ import CastingEn from "./pages/en/Casting";
 import TeamEn from "./pages/en/Team";
 import AboutEn from "./pages/en/About";
 import CasesEn from "./pages/en/Cases";
+import KremlinEn from "./pages/en/Kremlin";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +50,7 @@ const App = () => (
             <Route path="/team" element={<Team />} />
             <Route path="/about" element={<About />} />
             <Route path="/cases" element={<Cases />} />
+            <Route path="/kremlin" element={<Kremlin />} />
             
             {/* English pages */}
             <Route path="/en" element={<IndexEn />} />
@@ -60,6 +63,7 @@ const App = () => (
             <Route path="/en/team" element={<TeamEn />} />
             <Route path="/en/about" element={<AboutEn />} />
             <Route path="/en/cases" element={<CasesEn />} />
+            <Route path="/en/kremlin" element={<KremlinEn />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -8,7 +8,8 @@ const InstinctFooter = () => {
     { name: 'Кастинг', href: '/casting' }, 
     { name: 'Контакты', href: '/contacts' }, 
     { name: 'Продакт-плейсмент', href: '/product-placement' },
-    { name: 'События', href: '/events' }
+    { name: 'События', href: '/events' },
+    { name: 'Кремлевская Елка 2.0', href: '/kremlin', color: '#FF0000' }
   ];
   
   return (
@@ -16,7 +17,11 @@ const InstinctFooter = () => {
       <div className="flex flex-wrap gap-1 justify-center text-sm">
         {links.map((link, index) => (
           <span key={index}>
-            <a href={link.href} className="text-instinct-black hover:underline font-normal">
+            <a 
+              href={link.href} 
+              className="hover:underline font-normal"
+              style={{ color: link.color || 'hsl(var(--instinct-black))' }}
+            >
               {link.name}
             </a>
             {index < links.length - 1 && (

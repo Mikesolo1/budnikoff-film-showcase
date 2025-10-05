@@ -76,11 +76,18 @@ const IndexEn = () => {
             >
               Cases
             </a>
+            <a 
+              href="/en/kremlin"
+              className="block text-[#FF0000] text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '3.5s' }}
+            >
+              Kremlin Christmas Tree 2.0
+            </a>
             </div>
           </div>
           
           {/* Call to Action */}
-          <div className="mb-16 animate-fade-in" style={{ animationDelay: '3.5s' }}>
+          <div className="mb-16 animate-fade-in" style={{ animationDelay: '4s' }}>
             <a 
               href="/en/contacts"
               className="text-instinct-black text-base font-normal underline hover:no-underline transition-all"
@@ -90,7 +97,7 @@ const IndexEn = () => {
           </div>
           
           {/* Main Message */}
-          <div className="max-w-2xl text-center animate-fade-in" style={{ animationDelay: '4s' }}>
+          <div className="max-w-2xl text-center animate-fade-in" style={{ animationDelay: '4.5s' }}>
             <p className="text-instinct-black text-base sm:text-lg leading-relaxed font-normal">
               We produce vertical multi-episode projects for streaming platforms and search for new bright faces. 
               Creativity is an effective communication tool for the new generation.
