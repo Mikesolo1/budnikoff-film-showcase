@@ -76,8 +76,8 @@ const Kremlin = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="text-center p-6 border border-instinct-black/10 rounded-lg hover:border-instinct-black/30 transition-colors">
                 <div className="text-4xl mb-4">🎭</div>
-                <h3 className="text-lg font-normal text-instinct-black mb-2">Спектакль</h3>
-                <p className="text-sm text-instinct-black/60">Интеграция в сценарий представления</p>
+                <h3 className="text-lg font-normal text-instinct-black mb-2">Квест</h3>
+                <p className="text-sm text-instinct-black/60">Интеграция в сценарий квеста до представления</p>
               </div>
               <div className="text-center p-6 border border-instinct-black/10 rounded-lg hover:border-instinct-black/30 transition-colors">
                 <div className="text-4xl mb-4">🎄</div>
