@@ -1,5 +1,6 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import { useEffect } from "react";
 
 const IndexEn = () => {
@@ -17,7 +18,8 @@ const IndexEn = () => {
   };
 
   return (
-    <div className="min-h-screen bg-instinct-white">
+    <div className="min-h-screen bg-instinct-white relative">
+      <AnimatedBackground />
       <InstinctHeader />
       <main className="bg-instinct-white">
         {/* Hero Section */}
