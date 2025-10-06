@@ -7,9 +7,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-instinct-white relative">
       <AnimatedBackground />
-      <InstinctHeader />
-      <InstinctMain />
-      <InstinctFooter />
+      <div className="relative z-10">
+        <InstinctHeader />
+        <InstinctMain />
+        <InstinctFooter />
+      </div>
     </div>
   );
 };

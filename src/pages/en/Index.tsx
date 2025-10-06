@@ -20,6 +20,7 @@ const IndexEn = () => {
   return (
     <div className="min-h-screen bg-instinct-white relative">
       <AnimatedBackground />
+      <div className="relative z-10">
       <InstinctHeader />
       <main className="bg-instinct-white">
         {/* Hero Section */}
@@ -108,6 +109,7 @@ const IndexEn = () => {
         </section>
       </main>
       <InstinctFooter />
+      </div>
     </div>
   );
 };
