@@ -86,6 +86,13 @@ const IndexEn = () => {
             >
               Kremlin Christmas Tree 2.0
             </a>
+            <a 
+              href="/en/blog"
+              className="block text-instinct-black text-lg font-normal opacity-80 animate-slide-up hover:opacity-100 hover:underline transition-all" 
+              style={{ animationDelay: '4s' }}
+            >
+              Blog
+            </a>
             </div>
           </div>
           
