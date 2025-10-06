@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_posts: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          media_types: string[] | null
+          media_urls: string[] | null
+          published_at: string
+          telegram_chat_id: number | null
+          telegram_message_id: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          media_types?: string[] | null
+          media_urls?: string[] | null
+          published_at?: string
+          telegram_chat_id?: number | null
+          telegram_message_id?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          media_types?: string[] | null
+          media_urls?: string[] | null
+          published_at?: string
+          telegram_chat_id?: number | null
+          telegram_message_id?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
