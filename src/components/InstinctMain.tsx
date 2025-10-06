@@ -15,7 +15,7 @@ const InstinctMain = () => {
   };
 
   return (
-    <main className="bg-instinct-white">
+    <main className="relative">
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20">
         {/* Animated Logo */}
