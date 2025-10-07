@@ -32,24 +32,64 @@ serve(async (req) => {
       const mediaTypes: string[] = []
       const botToken = Deno.env.get('TELEGRAM_BOT_TOKEN')
 
-      // Helper function to get file URL
-      const getFileUrl = async (fileId: string) => {
+      // Helper function to download file and upload to Supabase Storage
+      const downloadAndUploadFile = async (fileId: string, fileType: string) => {
         try {
+          // Get file path from Telegram
           const fileResponse = await fetch(`https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`)
           const fileData = await fileResponse.json()
-          if (fileData.ok && fileData.result.file_path) {
-            return `https://api.telegram.org/file/bot${botToken}/${fileData.result.file_path}`
+          
+          if (!fileData.ok || !fileData.result.file_path) {
+            console.error('Failed to get file path:', fileData)
+            return null
           }
+          
+          // Download file from Telegram
+          const fileUrl = `https://api.telegram.org/file/bot${botToken}/${fileData.result.file_path}`
+          const downloadResponse = await fetch(fileUrl)
+          
+          if (!downloadResponse.ok) {
+            console.error('Failed to download file')
+            return null
+          }
+          
+          const fileBlob = await downloadResponse.blob()
+          const arrayBuffer = await fileBlob.arrayBuffer()
+          
+          // Generate unique filename
+          const extension = fileData.result.file_path.split('.').pop()
+          const filename = `${Date.now()}-${fileId}.${extension}`
+          const filePath = `${chatId}/${filename}`
+          
+          // Upload to Supabase Storage
+          const { data: uploadData, error: uploadError } = await supabase.storage
+            .from('blog-media')
+            .upload(filePath, arrayBuffer, {
+              contentType: fileBlob.type || 'application/octet-stream',
+              upsert: false
+            })
+          
+          if (uploadError) {
+            console.error('Storage upload error:', uploadError)
+            return null
+          }
+          
+          // Get public URL
+          const { data: { publicUrl } } = supabase.storage
+            .from('blog-media')
+            .getPublicUrl(filePath)
+          
+          return publicUrl
         } catch (error) {
-          console.error('Error fetching file:', error)
+          console.error('Error in downloadAndUploadFile:', error)
+          return null
         }
-        return null
       }
 
       // Handle photos
       if (post.photo && post.photo.length > 0) {
         const largestPhoto = post.photo[post.photo.length - 1]
-        const fileUrl = await getFileUrl(largestPhoto.file_id)
+        const fileUrl = await downloadAndUploadFile(largestPhoto.file_id, 'photo')
         if (fileUrl) {
           mediaUrls.push(fileUrl)
           mediaTypes.push('photo')
@@ -58,7 +98,7 @@ serve(async (req) => {
 
       // Handle video
       if (post.video) {
-        const fileUrl = await getFileUrl(post.video.file_id)
+        const fileUrl = await downloadAndUploadFile(post.video.file_id, 'video')
         if (fileUrl) {
           mediaUrls.push(fileUrl)
           mediaTypes.push('video')
@@ -67,7 +107,7 @@ serve(async (req) => {
 
       // Handle animation (GIFs)
       if (post.animation) {
-        const fileUrl = await getFileUrl(post.animation.file_id)
+        const fileUrl = await downloadAndUploadFile(post.animation.file_id, 'animation')
         if (fileUrl) {
           mediaUrls.push(fileUrl)
           mediaTypes.push('video')
@@ -76,7 +116,7 @@ serve(async (req) => {
 
       // Handle document with video mime type
       if (post.document && post.document.mime_type?.startsWith('video/')) {
-        const fileUrl = await getFileUrl(post.document.file_id)
+        const fileUrl = await downloadAndUploadFile(post.document.file_id, 'document')
         if (fileUrl) {
           mediaUrls.push(fileUrl)
           mediaTypes.push('video')

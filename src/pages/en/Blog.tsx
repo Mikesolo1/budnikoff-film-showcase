@@ -35,7 +35,7 @@ const BlogEn = () => {
     try {
       const currentOffset = initial ? 0 : offset;
       const { data, error } = await supabase
-        .from('blog_posts')
+        .from('blog_posts_public')
         .select('*')
         .order('published_at', { ascending: false })
         .range(currentOffset, currentOffset + POSTS_PER_PAGE - 1);
