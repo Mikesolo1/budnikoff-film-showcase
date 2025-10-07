@@ -17,6 +17,9 @@ interface BlogPost {
 const BlogEn = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [hasMore, setHasMore] = useState(true);
+  const [offset, setOffset] = useState(0);
+  const POSTS_PER_PAGE = 5;
 
   useEffect(() => {
     document.title = "Blog — Budnikov-Film";
@@ -25,24 +28,52 @@ const BlogEn = () => {
       metaDescription.setAttribute('content', 'News, announcements and insights from Budnikov-Film creative agency.');
     }
 
-    fetchPosts();
+    fetchPosts(true);
   }, []);
 
-  const fetchPosts = async () => {
+  const fetchPosts = async (initial = false) => {
     try {
+      const currentOffset = initial ? 0 : offset;
       const { data, error } = await supabase
         .from('blog_posts')
         .select('*')
-        .order('published_at', { ascending: false });
+        .order('published_at', { ascending: false })
+        .range(currentOffset, currentOffset + POSTS_PER_PAGE - 1);
 
       if (error) throw error;
-      setPosts(data || []);
+      
+      if (initial) {
+        setPosts(data || []);
+        setOffset(POSTS_PER_PAGE);
+      } else {
+        setPosts(prev => [...prev, ...(data || [])]);
+        setOffset(prev => prev + POSTS_PER_PAGE);
+      }
+      
+      setHasMore(data && data.length === POSTS_PER_PAGE);
     } catch (error) {
       console.error('Error fetching posts:', error);
     } finally {
       setLoading(false);
     }
   };
+
+  const handleScroll = () => {
+    if (loading || !hasMore) return;
+    
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    
+    if (scrollTop + windowHeight >= documentHeight - 200) {
+      fetchPosts(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loading, hasMore, offset]);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -91,7 +122,11 @@ const BlogEn = () => {
                       </div>
 
                       {post.media_urls && post.media_urls.length > 0 && (
-                        <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className={`mb-4 gap-4 ${
+                          post.media_urls.length === 1 
+                            ? 'grid grid-cols-1' 
+                            : 'grid grid-cols-2 md:grid-cols-3'
+                        }`}>
                           {post.media_urls.map((url, idx) => (
                             <div key={idx} className="rounded-lg overflow-hidden">
                               {post.media_types[idx] === 'photo' ? (
@@ -99,12 +134,14 @@ const BlogEn = () => {
                                   src={url}
                                   alt={`Media ${idx + 1}`}
                                   className="w-full h-auto object-cover"
+                                  loading="lazy"
                                 />
                               ) : post.media_types[idx] === 'video' ? (
                                 <video
                                   src={url}
                                   controls
                                   className="w-full h-auto"
+                                  preload="metadata"
                                 />
                               ) : null}
                             </div>
@@ -120,6 +157,12 @@ const BlogEn = () => {
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+            )}
+            
+            {loading && posts.length > 0 && (
+              <div className="text-center py-8">
+                <p className="text-instinct-black opacity-60">Loading...</p>
               </div>
             )}
           </div>

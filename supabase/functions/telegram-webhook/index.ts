@@ -25,53 +25,110 @@ serve(async (req) => {
       const messageId = post.message_id
       const chatId = post.chat.id
       const text = post.text || post.caption || ''
+      const mediaGroupId = post.media_group_id
       
       // Extract media URLs and types
       const mediaUrls: string[] = []
       const mediaTypes: string[] = []
+      const botToken = Deno.env.get('TELEGRAM_BOT_TOKEN')
+
+      // Helper function to get file URL
+      const getFileUrl = async (fileId: string) => {
+        try {
+          const fileResponse = await fetch(`https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`)
+          const fileData = await fileResponse.json()
+          if (fileData.ok && fileData.result.file_path) {
+            return `https://api.telegram.org/file/bot${botToken}/${fileData.result.file_path}`
+          }
+        } catch (error) {
+          console.error('Error fetching file:', error)
+        }
+        return null
+      }
 
       // Handle photos
       if (post.photo && post.photo.length > 0) {
-        // Get the largest photo
         const largestPhoto = post.photo[post.photo.length - 1]
-        const fileId = largestPhoto.file_id
-        
-        try {
-          const botToken = Deno.env.get('TELEGRAM_BOT_TOKEN')
-          const fileResponse = await fetch(`https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`)
-          const fileData = await fileResponse.json()
-          
-          if (fileData.ok && fileData.result.file_path) {
-            const fileUrl = `https://api.telegram.org/file/bot${botToken}/${fileData.result.file_path}`
-            mediaUrls.push(fileUrl)
-            mediaTypes.push('photo')
-          }
-        } catch (error) {
-          console.error('Error fetching photo:', error)
+        const fileUrl = await getFileUrl(largestPhoto.file_id)
+        if (fileUrl) {
+          mediaUrls.push(fileUrl)
+          mediaTypes.push('photo')
         }
       }
 
       // Handle video
       if (post.video) {
-        const fileId = post.video.file_id
-        
-        try {
-          const botToken = Deno.env.get('TELEGRAM_BOT_TOKEN')
-          const fileResponse = await fetch(`https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`)
-          const fileData = await fileResponse.json()
-          
-          if (fileData.ok && fileData.result.file_path) {
-            const fileUrl = `https://api.telegram.org/file/bot${botToken}/${fileData.result.file_path}`
-            mediaUrls.push(fileUrl)
-            mediaTypes.push('video')
-          }
-        } catch (error) {
-          console.error('Error fetching video:', error)
+        const fileUrl = await getFileUrl(post.video.file_id)
+        if (fileUrl) {
+          mediaUrls.push(fileUrl)
+          mediaTypes.push('video')
         }
       }
 
-      // Generate title from text (first line or first 100 chars)
-      const title = text.split('\n')[0].substring(0, 100) || 'Новый пост'
+      // Handle animation (GIFs)
+      if (post.animation) {
+        const fileUrl = await getFileUrl(post.animation.file_id)
+        if (fileUrl) {
+          mediaUrls.push(fileUrl)
+          mediaTypes.push('video')
+        }
+      }
+
+      // Handle document with video mime type
+      if (post.document && post.document.mime_type?.startsWith('video/')) {
+        const fileUrl = await getFileUrl(post.document.file_id)
+        if (fileUrl) {
+          mediaUrls.push(fileUrl)
+          mediaTypes.push('video')
+        }
+      }
+
+      // Generate title from text - cut by words, not characters
+      let title = 'Новый пост'
+      if (text) {
+        const firstLine = text.split('\n')[0]
+        if (firstLine.length <= 100) {
+          title = firstLine
+        } else {
+          const words = firstLine.split(' ')
+          let cutTitle = ''
+          for (const word of words) {
+            if ((cutTitle + word).length > 100) break
+            cutTitle += (cutTitle ? ' ' : '') + word
+          }
+          title = cutTitle || firstLine.substring(0, 100)
+        }
+      }
+
+      // If this is part of a media group, we need to aggregate media
+      if (mediaGroupId) {
+        // Check if we already have a post with this media_group_id
+        const { data: existingPosts } = await supabase
+          .from('blog_posts')
+          .select('*')
+          .eq('telegram_chat_id', chatId)
+          .eq('telegram_message_id', messageId)
+        
+        if (existingPosts && existingPosts.length > 0) {
+          // Update existing post with new media
+          const existingPost = existingPosts[0]
+          const updatedMediaUrls = [...(existingPost.media_urls || []), ...mediaUrls]
+          const updatedMediaTypes = [...(existingPost.media_types || []), ...mediaTypes]
+          
+          await supabase
+            .from('blog_posts')
+            .update({
+              media_urls: updatedMediaUrls,
+              media_types: updatedMediaTypes,
+            })
+            .eq('id', existingPost.id)
+          
+          console.log('Updated media group post')
+          return new Response(JSON.stringify({ ok: true }), {
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          })
+        }
+      }
 
       // Insert into database
       const { data, error } = await supabase
