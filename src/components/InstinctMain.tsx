@@ -10,6 +10,20 @@ const InstinctMain = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Полнометражные фильмы, сериалы, реклама. От идеи до премьеры. Продакт-плейсмент в топовые проекты.');
     }
+
+    // Reset animation state when returning to page (e.g., browser back button)
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) {
+        setIsAnimating(false);
+        setClickedLink("");
+      }
+    };
+
+    window.addEventListener('pageshow', handlePageShow);
+    
+    return () => {
+      window.removeEventListener('pageshow', handlePageShow);
+    };
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

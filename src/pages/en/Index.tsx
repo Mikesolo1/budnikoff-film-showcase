@@ -13,6 +13,20 @@ const IndexEn = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Feature films, series, advertising. From idea to premiere. Product placement in top projects. Creative agency for modern media.');
     }
+
+    // Reset animation state when returning to page (e.g., browser back button)
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) {
+        setIsAnimating(false);
+        setClickedLink("");
+      }
+    };
+
+    window.addEventListener('pageshow', handlePageShow);
+    
+    return () => {
+      window.removeEventListener('pageshow', handlePageShow);
+    };
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
