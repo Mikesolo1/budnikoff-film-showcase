@@ -1,7 +1,6 @@
 import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
 import AnimatedBackground from "@/components/AnimatedBackground";
-import ShatterEffect from "@/components/ShatterEffect";
 import { useEffect, useState } from "react";
 
 const IndexEn = () => {
@@ -23,7 +22,7 @@ const IndexEn = () => {
     
     setTimeout(() => {
       window.location.href = href;
-    }, 1500);
+    }, 3500);
   };
 
   const renderAnimatedText = (text: string, href: string) => {
@@ -48,7 +47,6 @@ const IndexEn = () => {
   return (
     <div className="min-h-screen bg-instinct-white relative">
       <AnimatedBackground />
-      <ShatterEffect isActive={isAnimating} />
       <div className="relative z-10">
       <InstinctHeader />
       <main className="bg-instinct-white">

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import ShatterEffect from "./ShatterEffect";
 
 const InstinctMain = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -20,7 +19,7 @@ const InstinctMain = () => {
     
     setTimeout(() => {
       window.location.href = href;
-    }, 1500);
+    }, 3500);
   };
 
   const renderAnimatedText = (text: string, href: string) => {
@@ -43,9 +42,7 @@ const InstinctMain = () => {
   };
 
   return (
-    <>
-      <ShatterEffect isActive={isAnimating} />
-      <main className="relative">
+    <main className="relative">
         {/* Hero Section */}
         <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20">
           {/* Animated Logo */}
@@ -146,7 +143,6 @@ const InstinctMain = () => {
           </div>
         </section>
       </main>
-    </>
   );
 };
 
