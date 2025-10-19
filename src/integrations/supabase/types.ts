@@ -19,6 +19,7 @@ export type Database = {
           content: string
           created_at: string
           id: string
+          media_group_id: string | null
           media_types: string[] | null
           media_urls: string[] | null
           published_at: string
@@ -31,6 +32,7 @@ export type Database = {
           content: string
           created_at?: string
           id?: string
+          media_group_id?: string | null
           media_types?: string[] | null
           media_urls?: string[] | null
           published_at?: string
@@ -43,6 +45,7 @@ export type Database = {
           content?: string
           created_at?: string
           id?: string
+          media_group_id?: string | null
           media_types?: string[] | null
           media_urls?: string[] | null
           published_at?: string

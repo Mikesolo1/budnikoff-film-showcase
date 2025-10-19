@@ -146,8 +146,7 @@ serve(async (req) => {
         const { data: existingPosts } = await supabase
           .from('blog_posts')
           .select('*')
-          .eq('telegram_chat_id', chatId)
-          .eq('telegram_message_id', messageId)
+          .eq('media_group_id', mediaGroupId)
         
         if (existingPosts && existingPosts.length > 0) {
           // Update existing post with new media
@@ -155,9 +154,13 @@ serve(async (req) => {
           const updatedMediaUrls = [...(existingPost.media_urls || []), ...mediaUrls]
           const updatedMediaTypes = [...(existingPost.media_types || []), ...mediaTypes]
           
+          // Update text if current post has text and existing doesn't
+          const updatedContent = existingPost.content || text
+          
           await supabase
             .from('blog_posts')
             .update({
+              content: updatedContent,
               media_urls: updatedMediaUrls,
               media_types: updatedMediaTypes,
             })
@@ -176,6 +179,7 @@ serve(async (req) => {
         .upsert({
           telegram_message_id: messageId,
           telegram_chat_id: chatId,
+          media_group_id: mediaGroupId,
           title: title,
           content: text,
           media_urls: mediaUrls,

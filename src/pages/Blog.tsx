@@ -3,7 +3,6 @@ import InstinctHeader from "@/components/InstinctHeader";
 import InstinctFooter from "@/components/InstinctFooter";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { supabase } from "@/integrations/supabase/client";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface BlogPost {
   id: string;
@@ -90,11 +89,7 @@ const Blog = () => {
       <div className="relative z-10">
         <InstinctHeader />
         <main className="relative pt-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto py-12">
-            <h1 className="text-4xl font-normal text-instinct-black mb-8 animate-fade-in">
-              Блог
-            </h1>
-
+          <div className="max-w-2xl mx-auto py-8">
             {loading ? (
               <div className="text-center py-12">
                 <p className="text-instinct-black opacity-60">Загрузка...</p>
@@ -104,58 +99,60 @@ const Blog = () => {
                 <p className="text-instinct-black opacity-60">Пока нет постов</p>
               </div>
             ) : (
-              <div className="space-y-8">
+              <div className="space-y-4">
                 {posts.map((post, index) => (
-                  <Card 
+                  <div 
                     key={post.id} 
-                    className="animate-fade-in border-instinct-black/10"
+                    className="animate-fade-in bg-white rounded-2xl p-4 shadow-sm"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <CardContent className="p-6">
-                      <div className="mb-4">
-                        <h2 className="text-2xl font-normal text-instinct-black mb-2">
-                          {post.title}
-                        </h2>
-                        <time className="text-sm text-instinct-black opacity-50">
-                          {formatDate(post.published_at)}
-                        </time>
-                      </div>
+                    {post.content && (
+                      <p className="text-instinct-black text-[15px] leading-relaxed whitespace-pre-wrap mb-3">
+                        {post.content}
+                      </p>
+                    )}
 
-                      {post.media_urls && post.media_urls.length > 0 && (
-                        <div className={`mb-4 gap-4 ${
-                          post.media_urls.length === 1 
-                            ? 'grid grid-cols-1' 
-                            : 'grid grid-cols-2 md:grid-cols-3'
-                        }`}>
-                          {post.media_urls.map((url, idx) => (
-                            <div key={idx} className="rounded-lg overflow-hidden">
-                              {post.media_types[idx] === 'photo' ? (
-                                <img
-                                  src={url}
-                                  alt={`Медиа ${idx + 1}`}
-                                  className="w-full h-auto object-cover"
-                                  loading="lazy"
-                                />
-                              ) : post.media_types[idx] === 'video' ? (
-                                <video
-                                  src={url}
-                                  controls
-                                  className="w-full h-auto"
-                                  preload="metadata"
-                                />
-                              ) : null}
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      <div className="prose prose-sm max-w-none">
-                        <p className="text-instinct-black whitespace-pre-wrap">
-                          {post.content}
-                        </p>
+                    {post.media_urls && post.media_urls.length > 0 && (
+                      <div className={`gap-1 ${
+                        post.media_urls.length === 1 
+                          ? 'grid grid-cols-1' 
+                          : post.media_urls.length === 2
+                          ? 'grid grid-cols-2'
+                          : post.media_urls.length === 3
+                          ? 'grid grid-cols-2'
+                          : 'grid grid-cols-2'
+                      }`}>
+                        {post.media_urls.map((url, idx) => (
+                          <div 
+                            key={idx} 
+                            className={`rounded-lg overflow-hidden ${
+                              post.media_urls.length === 3 && idx === 0 ? 'col-span-2' : ''
+                            }`}
+                          >
+                            {post.media_types[idx] === 'photo' ? (
+                              <img
+                                src={url}
+                                alt=""
+                                className="w-full h-full object-cover"
+                                loading="lazy"
+                              />
+                            ) : post.media_types[idx] === 'video' ? (
+                              <video
+                                src={url}
+                                controls
+                                className="w-full h-full object-cover"
+                                preload="metadata"
+                              />
+                            ) : null}
+                          </div>
+                        ))}
                       </div>
-                    </CardContent>
-                  </Card>
+                    )}
+
+                    <time className="text-xs text-instinct-black opacity-40 block mt-3">
+                      {formatDate(post.published_at)}
+                    </time>
+                  </div>
                 ))}
               </div>
             )}
