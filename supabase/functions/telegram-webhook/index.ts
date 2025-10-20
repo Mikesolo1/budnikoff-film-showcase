@@ -39,8 +39,21 @@ serve(async (req) => {
           const fileResponse = await fetch(`https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`)
           const fileData = await fileResponse.json()
           
-          if (!fileData.ok || !fileData.result.file_path) {
+          if (!fileData.ok) {
+            // If file is too big, return Telegram post link instead
+            if (fileData.description?.includes('file is too big')) {
+              console.log('File is too big, using Telegram link instead')
+              const chatUsername = post.sender_chat?.username || post.chat?.username
+              if (chatUsername) {
+                return `https://t.me/${chatUsername}/${messageId}`
+              }
+            }
             console.error('Failed to get file path:', fileData)
+            return null
+          }
+          
+          if (!fileData.result.file_path) {
+            console.error('No file path in response')
             return null
           }
           

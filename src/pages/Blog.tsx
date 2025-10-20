@@ -129,7 +129,17 @@ const Blog = () => {
                               post.media_urls.length === 3 && idx === 0 ? 'col-span-2' : ''
                             }`}
                           >
-                            {post.media_types[idx] === 'photo' ? (
+                            {url.startsWith('https://t.me/') ? (
+                              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                                <iframe
+                                  src={`${url}?embed=1`}
+                                  className="absolute top-0 left-0 w-full h-full"
+                                  frameBorder="0"
+                                  scrolling="no"
+                                  allowFullScreen
+                                />
+                              </div>
+                            ) : post.media_types[idx] === 'photo' ? (
                               <img
                                 src={url}
                                 alt=""
