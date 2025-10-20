@@ -130,10 +130,10 @@ const BlogEn = () => {
                             }`}
                           >
                             {url.startsWith('https://t.me/') ? (
-                              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                              <div className="relative w-full overflow-hidden rounded-lg" style={{ minHeight: '400px' }}>
                                 <iframe
                                   src={`${url}?embed=1`}
-                                  className="absolute top-0 left-0 w-full h-full"
+                                  className="w-full h-full min-h-[400px]"
                                   frameBorder="0"
                                   scrolling="no"
                                   allowFullScreen
