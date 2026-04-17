@@ -63,7 +63,7 @@ const InstinctMain = () => {
           <div className="mb-12">
             <div className="text-center animate-fade-in">
               <h1 className="text-2xl sm:text-3xl font-normal text-instinct-black animate-pulse tracking-wide">
-                {renderAnimatedText('будников-фильм™', '')}
+                {renderAnimatedText('Будников-Фильм™', '')}
               </h1>
             </div>
           </div>

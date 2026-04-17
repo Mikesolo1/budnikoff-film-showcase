@@ -136,7 +136,7 @@ const Contacts = () => {
         <div className="border-t border-premium-black/10 pt-12 animate-fade-in-up" style={{ animationDelay: '1s' }}>
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-premium-black/40 font-light tracking-wider">
-              © 2024 БУДНИКОВ-ФИЛЬМ. ВСЕ ПРАВА ЗАЩИЩЕНЫ.
+              © 2024 Будников-Фильм. Все права защищены.
             </p>
             <p className="text-sm text-premium-black/40 font-light">
               Креативное агентство полного цикла • Москва, Россия
